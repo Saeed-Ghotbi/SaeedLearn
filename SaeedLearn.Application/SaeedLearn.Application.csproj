@@ -11,12 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\" />
     <Folder Include="DTOs\Course\Validators\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Features\Course\Handlers\" />
+    <Folder Include="Features\Course\Handlers\Command\" />
     <Folder Include="Features\Course\Requests\Command\" />
-    <Folder Include="Profiles\" />
     <Folder Include="Responses\" />
   </ItemGroup>
 

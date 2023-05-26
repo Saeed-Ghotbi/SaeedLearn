@@ -8,7 +8,7 @@ using SaeedLearn.Application.DTOs.Course;
 
 namespace SaeedLearn.Application.Features.Course.Requests.Queries
 {
-    public class GetCourseDetailRequest : IRequest<CourseDto> {
-        public int Id { get; set; }  
+    public class GetCardCourseListRequest :IRequest<CardCourseDto>
+    {
     }
 }

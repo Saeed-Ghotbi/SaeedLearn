@@ -9,10 +9,10 @@ namespace SaeedLearn.Domain
 {
     public class Course : BaseDomainEntity
     {
-        public string Description { get; set; }
-        public DateTime DateModified { get; set; }
-        public string? ImgPath { get; set; }
-        public Teacher Teacher { get; set; }
+        public string    Description  { get; set; }
+        public DateTime? DateModified { get; set; }
+        public string?   ImgPath      { get; set; }
+        //public Teacher Teacher { get; set; }
         public bool ActiveCourse { get; set; }
         public double Price { get; set; }
         public float? Offer { get; set; }

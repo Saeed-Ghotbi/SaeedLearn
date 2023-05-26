@@ -445,6 +445,11 @@ $RECYCLE.BIN/
 /SaeedLearn.Application/bin/
 /SaeedLearn.Application/obj/
 
+/SaeedLearn.Persistence/bin/
+/SaeedLearn.Persistence/obj/
+
+/SaeedLearn.MVC/bin/
+/SaeedLearn.MVC/obj/
 
 /SaeedLearn.Domain/bin/
 /SaeedLearn.Domain/obj/

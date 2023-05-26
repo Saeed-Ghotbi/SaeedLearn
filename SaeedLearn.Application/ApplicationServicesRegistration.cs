@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace SaeedLearn.Application
 {
-    internal class ApplicationServicesRegistration
+    public static class ApplicationServicesRegistration
     {
+        public static IServiceCollection ConfigureApplicationService(this IServiceCollection service)
+        {
+            service.AddAutoMapper(Assembly.GetExecutingAssembly());
+            service.AddMediatR(Assembly.GetExecutingAssembly());
+            return service;
+        }
     }
 }
