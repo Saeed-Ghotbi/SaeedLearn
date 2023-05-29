@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SaeedLearn.Domain;
+using SaeedLearn.Persistence.Configurations.Entities;
 
 namespace SaeedLearn.Persistence
 {
@@ -13,7 +14,9 @@ namespace SaeedLearn.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            CourseConfiguration configuration = new CourseConfiguration();
+
+            configuration.Configure(modelBuilder.Entity<Course>());
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

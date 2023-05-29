@@ -9,7 +9,7 @@ namespace SaeedLearn.Domain
 {
     public class Teacher : BaseDomainEntity
     {
-        //public Course Course { get; set; }
+        public Course Course { get; set; }
         public int CourseId { get; set; }
     }
 }
