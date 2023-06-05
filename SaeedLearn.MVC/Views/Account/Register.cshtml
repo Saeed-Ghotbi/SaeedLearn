@@ -1,0 +1,63 @@
+﻿@model RegisterViewModel
+
+
+<div class="signUp-page signUp-minimal pt-50 pb-100">
+    <div class="shape-wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> <!-- /.shape-wrapper -->
+    <div class="sign-up-form-wrapper">
+
+        <form asp-action="Register" method="post">
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="UserName">
+                        <label asp-for="UserName"></label>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="EmailAddress">
+                        <label asp-for="EmailAddress"></label>
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="PhoneNumber">
+                        <label asp-for="PhoneNumber"></label>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="Password">
+                        <label asp-for="Password"></label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="ConfirmPassword">
+                        <label asp-for="ConfirmPassword"></label>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+             
+            </div> <!-- /.row -->
+          
+            <button type="submit" class="line-button-one">ثبت نام</button>
+        </form>
+    </div> <!-- /.sign-up-form-wrapper -->
+</div> <!-- /.signUp-page -->
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

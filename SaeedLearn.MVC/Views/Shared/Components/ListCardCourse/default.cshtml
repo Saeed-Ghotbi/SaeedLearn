@@ -1,0 +1,7 @@
+﻿@model List<SaeedLearn.Application.DTOs.Course.CardCourseDto>
+@foreach (var course in Model)
+{
+    <div class="item">
+        <partial name="_Card" model="course" />
+    </div>
+}

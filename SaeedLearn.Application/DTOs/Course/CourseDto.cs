@@ -7,12 +7,12 @@ using SaeedLearn.Application.DTOs.Common;
 
 namespace SaeedLearn.Application.DTOs.Course
 {
-    public class CourseDto : BaseDto
+    public class CourseDto : BaseCourseDto
+
     {
         public DateTime DateCreated { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public DateTime DateModified { get; set; }
-        public string? ImgPath { get; set; }
         public bool ActiveCourse { get; set; }
 
 

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using SaeedLearn.Application.DTOs.Common;
 
 namespace SaeedLearn.Application.DTOs.Course
 {
-    public class CardCourseDto :BaseDto
+    public class CardCourseDto : BaseCourseDto
     {
-        public TimeOnly TimeCourse { get; set; } 
+        public TimeOnly TimeCourse { get; set; }
+
     }
 }

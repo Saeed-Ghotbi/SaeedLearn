@@ -7,7 +7,7 @@ using SaeedLearn.Domain;
 
 namespace SaeedLearn.Application.Contracts.Persistence
 {
-    public interface ICourseRepository : IGenericRepository<Course> {
-        public Task<List<Course>> GetListCard();
+    public interface ICategoryRepository : IGenericRepository<Category>
+    {
     }
 }

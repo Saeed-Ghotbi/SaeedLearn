@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace SaeedLearn.Domain.Common
 {
-    public class BaseDomainEntity
+    public abstract class BaseDomainEntity
     {
-        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DateCreated { get; set; }

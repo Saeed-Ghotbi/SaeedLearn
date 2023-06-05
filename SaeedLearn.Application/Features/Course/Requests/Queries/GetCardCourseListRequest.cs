@@ -8,7 +8,8 @@ using SaeedLearn.Application.DTOs.Course;
 
 namespace SaeedLearn.Application.Features.Course.Requests.Queries
 {
-    public class GetCardCourseListRequest :IRequest<CardCourseDto>
+    public class GetCardCourseListRequest :IRequest<List<CardCourseDto>>
     {
+
     }
 }

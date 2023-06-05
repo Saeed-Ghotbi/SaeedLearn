@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SaeedLearn.Domain;
 
-namespace SaeedLearn.Persistence.Configurations.Entities
+namespace SaeedLearn.Persistence.Configurations.SeedData
 {
-    public class CourseConfiguration : IEntityTypeConfiguration<Course>
+    public class CourseSeedData : IEntityTypeConfiguration<Course>
     {
         public void Configure(EntityTypeBuilder<Course> builder)
         {

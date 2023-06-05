@@ -140,38 +140,7 @@ What WE Do
     <div class="main-wrapper">
         <a href="product-full-width.html" class="view-gallery">مشاهده همه دوره ها</a>
         <div class="gallery-slider lightgallery">
-            <div class="item">
-                <div class="img-box">
-                    <img src="images/portfolio/1.jpg" alt="">
-                    <div class="hover-content">
-                        <a href="images/portfolio/1.jpg" class="icon zoom fancybox" data-fancybox="images" data-caption="My caption">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img-box">
-                    <img src="images/portfolio/2.jpg" alt="">
-                    <div class="hover-content">
-                        <a href="images/portfolio/2.jpg" class="icon zoom fancybox" data-fancybox="images" data-caption="My caption">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img-box">
-                    <img src="images/portfolio/3.jpg" alt="">
-                    <div class="hover-content">
-                        <a href="images/portfolio/3.jpg" class="icon zoom fancybox" data-fancybox="images" data-caption="My caption">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img-box">
-                    <img src="images/portfolio/4.jpg" alt="">
-                    <div class="hover-content">
-                        <a href="images/portfolio/4.jpg" class="icon zoom fancybox" data-fancybox="images" data-caption="My caption">+</a>
-                    </div>
-                </div>
-            </div>
+            @await Component.InvokeAsync("ListCardCourse")
         </div> <!-- /.gallery-slider -->
     </div> <!-- /.main-wrapper -->
 </div> <!-- /.agn-our-gallery -->

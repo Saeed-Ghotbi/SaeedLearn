@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SaeedLearn.Application.DTOs.Common
+﻿namespace SaeedLearn.Application.DTOs.Common
 {
-    public class BaseDto
+    public abstract class BaseDto
     {
-        public int    Id          { get; set; }
-        public string Name       { get; set; }
-        public double Price       { get; set; }
-        public float? Offer       { get; set; }
-        public string TeacherName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+
     }
 }

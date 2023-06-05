@@ -1,8 +1,5 @@
-﻿<!--
-=============================================
-    Theme Solid Inner Banner
-==============================================
--->
+﻿@model List<SaeedLearn.Application.DTOs.Course.CardCourseDto>
+
 <div class="solid-inner-banner">
     <h2 class="page-title">دوره های آموزشی</h2>
     <ul class="page-breadcrumbs">
@@ -11,11 +8,7 @@
         <li>دوره ها</li>
     </ul>
 </div> <!-- /.solid-inner-banner -->
-<!--
-=============================================
-    E-Commerce Product Area
-==============================================
--->
+
 <div class="full-width-container pt-150 pb-200">
     <div class="row">
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 ">
@@ -40,10 +33,10 @@
                         </li>
                         <li>
                             <a href="#">هوش مصنوعی <span>(19)</span></a>
-                        </li>                        
+                        </li>
                     </ul>
                 </div> <!-- /.single-block -->
-   
+
             </div> <!-- /.theme-sidebar-widget -->
         </div>
 
@@ -51,13 +44,14 @@
             <!-- SHOP SHOWCASE -->
             <div class="product-showcase">
                 <div class="row gutter-50">
-                    @for (int i = 0; i < 6; i++)
+                    @await Component.InvokeAsync("ListCardCourse")
+
+                    @*  @foreach (var course in Model)
                     {
                     <div class="col-xl-4 col-md-6">
-                     <partial name="_Card"/> 
+                    <partial name="_Card" model="course" />
                     </div>
-                        
-                    }
+                    }*@
                 </div> <!-- /.row -->
             </div> <!-- /.product-showcase -->
 
@@ -72,3 +66,7 @@
         </div> <!-- /.col- -->
     </div> <!-- /.row -->
 </div> <!-- /.full-width-container -->
+@section Scripts
+    {
+    <script src="~/js/course.js"></script>
+}

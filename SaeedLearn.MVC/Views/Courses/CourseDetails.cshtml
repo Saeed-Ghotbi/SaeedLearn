@@ -1,9 +1,10 @@
-﻿<div class="solid-inner-banner">
-	<h2 class="page-title">Single Product</h2>
+﻿@model SaeedLearn.Application.DTOs.Course.CourseDto
+<div class="solid-inner-banner">
+	<h2 class="page-title">@Model.Name</h2>
 	<ul class="page-breadcrumbs">
-		<li><a href="index.html">Home</a></li>
+		<li><a href="/">خانه</a></li>
 		<li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
-		<li>Product Details</li>
+		<li>@Model.Name</li>
 	</ul>
 </div> <!-- /.solid-inner-banner -->
 
@@ -13,19 +14,13 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="tab-content">
-						<div id="menu0" class="tab-pane fade show active"><img src="images/shop/15.jpg" alt=""></div>
-						<div id="menu1" class="tab-pane fade"><img src="images/shop/16.jpg" alt=""></div>
-						<div id="menu2" class="tab-pane fade"><img src="images/shop/17.jpg" alt=""></div>
+						<div id="menu0" class="tab-pane fade show active"><img src="~/images/@Model.ImgPath" alt=""></div>
+						
 					</div>
-					<ul class="nav nav-tabs">
-						<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu0"><img src="images/shop/15.jpg" alt=""></a></li>
-						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1"><img src="images/shop/16.jpg" alt=""></a></li>
-						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2"><img src="images/shop/17.jpg" alt=""></a></li>
-					</ul>
-				</div>
+                </div>
 				<div class="col-md-6 col-xs-12">
 					<div class="product-info">
-						<h3 class="product-name">Air Zoom Pegasus 35 Nathan Bell boot</h3>
+						<h3 class="product-name">@Model.Name</h3>
 						<ul class="rating">
 							<li><i class="fa fa-star" aria-hidden="true"></i></li>
 							<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -35,13 +30,13 @@
 							<li>4.5</li>
 							<li>32 نظر</li>
 						</ul>
-						<strong class="price">$143.00</strong>
+						<strong class="price">@Model.Price</strong>
 						<ul class="availability">
-							<li><span>136</span> Piece Available</li>
-							<li>|</li>
+							<li>@Model.TeacherName</li>
+							<li>@Model.DateCreated</li>
 							<li><span>20</span> Days Left</li>
 						</ul> <!-- /.availability -->
-						<p>Summer is the best time to stock up on lightweight bras keep cool. If your relaxing at home slip on a triangle bra.</p>
+						<p>@Model.Description</p>
 						
 						<div>
 							<a href="#" class="cart-button">اضافه به سبد خرید</a>
@@ -59,13 +54,13 @@
 			</ul>
 			<div class="tab-content">
 				<div id="menu11" class="tab-pane fade show active">
-					<p>One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience in emotional sensation of stress from our first instances of social rejection ridicule. We quickly learn to fear and thus automatically avoid potentially stressful situations of all kinds, including the most common of all making mistakes.</p>
-					<h6 class="list-title">Check product main features:</h6>
+					<p>@Model.Description</p>
+					@*<h6 class="list-title">Check product main features:</h6>
 					<ul class="list-item">
 						<li>Lorem ipsum best lightweight bras cool rejection quickly avoid dummy text.</li>
 						<li>Lightweight bras cool rejection quickly avoid dummy text.</li>
 						<li>We quickly learn to fear and thus automatically avoid potentially</li>
-					</ul>
+					</ul>*@
 				</div>
 				<div id="menu12" class="tab-pane fade">
 					<h4 class="tab-title">Check product main features:</h4>
@@ -81,7 +76,7 @@
 				<div id="menu21" class="tab-pane fade">
 					<div class="user-comment-area">
 						<div class="single-comment d-sm-flex align-items-top">
-							<img src="images/blog/1.jpg" alt="" class="user-img">
+							<img src="~/images/blog/1.jpg" alt="" class="user-img">
 							<div class="user-comment-data">
 								<h6 class="name">Rashed ka.</h6>
 								<ul class="rating">
@@ -95,7 +90,7 @@
 							</div> <!-- /.user-comment-data -->
 						</div> <!-- /.single-comment -->
 						<div class="single-comment d-sm-flex align-items-top">
-							<img src="images/blog/2.jpg" alt="" class="user-img">
+							<img src="~/images/blog/2.jpg" alt="" class="user-img">
 							<div class="user-comment-data">
 								<h6 class="name">Zubayer hasan</h6>
 								<ul class="rating">
@@ -117,11 +112,11 @@
 			<h2 class="title">دوره های مشابه</h2>
 			<div class="related-product-slider">
 				<div class="item">
-                    <partial name="_Card"/>
+                    @*<partial name="_Card"/>*@
 				</div>
 				<div class="item">
 					<div class="single-product-case">
-						<div class="img-holder"><a href="#"><img src="images/shop/2.jpg" alt=""></a></div>
+						<div class="img-holder"><a href="#"><img src="~/images/shop/2.jpg" alt=""></a></div>
 						<div class="info">
 							<a href="#" class="name">New Jacket Men.</a>
 							<div class="price">$139.00</div>
@@ -133,7 +128,7 @@
 				</div>
 				<div class="item">
 					<div class="single-product-case">
-						<div class="img-holder"><a href="#"><img src="images/shop/3.jpg" alt=""></a></div>
+						<div class="img-holder"><a href="#"><img src="~/images/shop/3.jpg" alt=""></a></div>
 						<div class="info">
 							<a href="#" class="name">New Jacket Men.</a>
 							<div class="price">$139.00</div>
@@ -145,7 +140,7 @@
 				</div>
 				<div class="item">
 					<div class="single-product-case">
-						<div class="img-holder"><a href="#"><img src="images/shop/22.jpg" alt=""></a></div>
+						<div class="img-holder"><a href="#"><img src="~/images/shop/22.jpg" alt=""></a></div>
 						<div class="info">
 							<a href="#" class="name">New Jacket Men.</a>
 							<div class="price">$139.00</div>
@@ -157,7 +152,7 @@
 				</div>
 				<div class="item">
 					<div class="single-product-case">
-						<div class="img-holder"><a href="#"><img src="images/shop/18.jpg" alt=""></a></div>
+						<div class="img-holder"><a href="#"><img src="~/images/shop/18.jpg" alt=""></a></div>
 						<div class="info">
 							<a href="#" class="name">New Jacket Men.</a>
 							<div class="price">$139.00</div>

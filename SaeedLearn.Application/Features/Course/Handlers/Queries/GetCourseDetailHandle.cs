@@ -18,7 +18,7 @@ namespace SaeedLearn.Application.Features.Course.Handlers.Queries
         }
         public async Task<CourseDto> Handle(GetCourseDetailRequest request, CancellationToken cancellationToken)
         {
-            var course = await _courseRepository.GetCourseById(request.Id);
+            var course = await _courseRepository.Get(request.Id);
             return _mapper.Map<CourseDto>(course);
         }
     }

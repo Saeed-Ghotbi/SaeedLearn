@@ -1,10 +1,11 @@
-﻿<div class="single-product-case">
-    <div class="img-holder"><a href="@Url.Action("Index","CourseDetail")"><img src="images/test-1.jpg" alt=""></a></div>
+﻿@model SaeedLearn.Application.DTOs.Course.CardCourseDto
+<div class="single-product-case">
+    <div class="img-holder"><a href="@Url.Action("CourseDetails","Courses",new {id = Model.Id})"><img src="/images/@Model.ImgPath" alt="@Model.Name"></a></div>
     <div class="info">
-        <a href="shop-details.html" class="name">آموزش جاوااسکریپت</a>
-        <div class="teacher"><i class="fa fa-user" aria-hidden="true"></i>&nbsp&nbspقطبی</div>
-        <div class="price">$139.00</div>
-        <a href="cart.html" class="cart-button" title="Add to cart">
+        <a href="shop-details.html" class="name">@Model.Name</a>
+        <div class="teacher"><i class="fa fa-user mr-2" aria-hidden="true"></i>@Model.TeacherName</div>
+        <div class="price">@Model.Price</div>
+        <a href="#" class="cart-button" title="Add to cart">
             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
         </a>
     </div>
