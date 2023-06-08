@@ -15,7 +15,6 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Features\Course\Handlers\Command\" />
     <Folder Include="Features\Course\Requests\Command\" />
-    <Folder Include="Responses\" />
   </ItemGroup>
 
   <ItemGroup>

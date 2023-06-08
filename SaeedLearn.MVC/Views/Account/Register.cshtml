@@ -10,9 +10,23 @@
         <span></span>
     </div> <!-- /.shape-wrapper -->
     <div class="sign-up-form-wrapper">
-
+        @Html.ValidationMessage("Register")
         <form asp-action="Register" method="post">
             <div class="row">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="FirstName">
+                        <label asp-for="FirstName"></label>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
+                <div class="col-12">
+                    <div class="input-group">
+                        <input asp-for="LastName">
+                        <label asp-for="LastName"></label>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div> <!-- /.input-group -->
+                </div> <!-- /.col- -->
                 <div class="col-12">
                     <div class="input-group">
                         <input asp-for="UserName">
@@ -48,7 +62,7 @@
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div> <!-- /.input-group -->
                 </div> <!-- /.col- -->
-             
+
             </div> <!-- /.row -->
           
             <button type="submit" class="line-button-one">ثبت نام</button>

@@ -69,24 +69,39 @@
                     <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> SaeedGhotbi@outlook.com</a></li>
                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>0938-0883666</a></li>
                 </ul>
-                <ul class="right-widget">
-                    <li class="user-profile-action">
-                        <div class="dropdown">
-                            <button class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="images/icon/icon38.svg" alt="">
-                                <span>پروفایل</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul>
-                                    <li><a href="@Url.Action("Login","Account")"><img src="images/icon/icon39.svg" alt="" class="icon svg"> پروفایل من</a></li>
-                                    <li><a href="@Url.Action("Register","Account")"><img src="images/icon/icon40.svg" alt="" class="icon svg"> Settings</a></li>
-                                    <li><a href="#"><img src="images/icon/icon42.svg" alt="" class="icon svg"> Billing Address</a></li>
-                                    <li><a href="#"><img src="images/icon/icon41.svg" alt="" class="icon svg"> Wishlist</a></li>
-                                </ul>
-                            </div> <!-- /.dropdown-menu -->
-                        </div>
-                    </li> <!-- /.user-profile-action -->
-                </ul>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul class="right-widget">
+                        <li class="user-profile-action">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="images/icon/icon38.svg" alt="">
+                                    <span>پروفایل</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "Account")"><img src="images/icon/icon39.svg" alt="" class="icon svg"> پروفایل @User.Identity.Name </a></li>
+                                        <li><a href="#"><img src="images/icon/icon41.svg" alt="" class="icon svg"> سبد خرید</a></li>
+                                        <li><a href="@Url.Action("Logout","Account")"><img src="images/icon/icon42.svg" alt="" class="icon svg"> خروج</a></li>
+                                    </ul>
+                                </div> <!-- /.dropdown-menu -->
+                            </div>
+                        </li> <!-- /.user-profile-action -->
+                    </ul>
+                }
+                else
+                {
+                    <ul class="right-widget">
+                        <li>
+                            <a href="@Url.Action("Login", "Account")">ورود</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Register", "Account")">ثبت نام</a>
+                        </li>
+                    </ul>
+
+                }
+
             </div> <!-- /.top-header -->
 
             <div class="d-flex justify-content-between align-items-center main-header">
@@ -133,7 +148,7 @@
                                     <span class="item-count">02</span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="cart-product-list">                                  
+                                    <ul class="cart-product-list">
                                         <li class="clearfix selected-item">
                                             <a href="#" class="item-img"><img src="images/shop/2.png" alt=""></a>
                                             <div class="item-info">
@@ -147,12 +162,12 @@
                                         <div class="title">Subtotal</div>
                                         <div class="total-price">$163.00</div>
                                     </div>
-                                    <ul class="button-group">                                        
+                                    <ul class="button-group">
                                         <li><a href="checkout.html" class="checkout">پرداخت</a></li>
                                     </ul>
                                 </div> <!-- /.dropdown-menu -->
                             </div>
-                        </li> <!-- /.cart-action-wrapper -->                        
+                        </li> <!-- /.cart-action-wrapper -->
                     </ul>
                 </div> <!-- /.widget-container -->
             </div>

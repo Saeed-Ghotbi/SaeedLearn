@@ -5,16 +5,16 @@ namespace SaeedLearn.MVC.Models
     public class LoginViewModel
     {
         [Required]
-        [EmailAddress]
         [MaxLength(100)]
+        [DataType(DataType.Text)]
         [Display(Name = "نام کاربری")]
-        public string EmailAddress { get; set; }
+        public string? UserName { get; set; }
         [Required]
         [DataType(DataType.Password)]
         [MaxLength(100)]
         [Display(Name = "رمز ورود")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
         [Display(Name = "مرا به خاطر بسپار")]
-        public bool RememberMe{ get; set; }
+        public bool RememberMe { get; set; }
     }
 }

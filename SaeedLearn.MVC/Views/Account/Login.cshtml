@@ -10,14 +10,15 @@
     <div class="signin-form-wrapper">
         <div class="title-area text-center">
             <h3>ورود</h3>
+            @Html.ValidationMessage("Login")
         </div> <!-- /.title-area -->
         <form asp-action="Login" method="post">
             <div class="row">
                 <div class="col-12">
                     <div class="input-group">
-                        <input asp-for="EmailAddress">
-                        <label asp-for="EmailAddress"></label>
-                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        <input asp-for="UserName">
+                        <label asp-for="UserName"></label>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
                     </div> <!-- /.input-group -->
                 </div> <!-- /.col- -->
                 <div class="col-12">
@@ -27,19 +28,21 @@
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div> <!-- /.input-group -->
                 </div> <!-- /.col- -->
-            </div> <!-- /.row -->
-            <div class="agreement-checkbox d-flex justify-content-between align-items-center">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="RememberMe"/> @Html.DisplayNameFor(model => model.RememberMe)
-                </label>
+            <div class="col-12 mb-2">
+                <input asp-for = "RememberMe" /> 
+                <label asp-for = "RememberMe"></label> 
+                <span asp-validation-for = "RememberMe"></span> 
             </div>
+            </div> <!-- /.row -->
             <button class="line-button-one">ورود</button>
         </form>
         <p class="signUp-text text-center">حساب کاربری نداری? <a href="@Url.Action("Register","Account")">ثبت نام</a></p>
     </div> <!-- /.sign-up-form-wrapper -->
 </div> <!-- /.signUp-page -->
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
 
 
