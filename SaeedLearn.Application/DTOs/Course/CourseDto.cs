@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SaeedLearn.Application.DTOs.Common;
+﻿using SaeedLearn.Application.DTOs.Common;
+using SaeedLearn.Domain;
 
 namespace SaeedLearn.Application.DTOs.Course
 {
@@ -14,7 +10,8 @@ namespace SaeedLearn.Application.DTOs.Course
         public string? Description { get; set; }
         public DateTime DateModified { get; set; }
         public bool ActiveCourse { get; set; }
-
+        public int TeacherId { get; set; }
+        public IList<CourseCategory>? CourseCategories { get; set; }
 
     }
 }

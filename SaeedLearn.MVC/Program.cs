@@ -15,9 +15,9 @@ builder.Services.ConfigurePersistenceServices(configuration);
 builder.Services.ConfigureIdentityServices(configuration);
 
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddRazorPages();
 
-
-builder.Services.AddTransient<IAuthService, AuthService>();
+    builder.Services.AddTransient<IAuthService, AuthService>();
 
 var app = builder.Build();
 
@@ -33,17 +33,10 @@ app.UseRouting();
 app.UseAuthorization();
 app.UseAuthentication();
 
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "login",
-    pattern: "Account/Login/{returnUrl?}",
-    defaults: new
-    {
-        controller = "Account",
-        action = "Login"
-    });
 app.Run();

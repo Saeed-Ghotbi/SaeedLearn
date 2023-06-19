@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol.Plugins;
 using SaeedLearn.Application.Contracts.Identity;
 using SaeedLearn.Application.Models.Identity;
 using SaeedLearn.MVC.Models;
@@ -20,14 +18,18 @@ namespace SaeedLearn.MVC.Controllers
             _authService = authService;
             _mapper = mapper;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await _authService.IsAdmin(User.Identity.Name);
+            if (result)
+            {
+                return Redirect("/Admin");
+            }
             return View();
         }
         #region Register
         public IActionResult Register()
         {
-
             return View();
         }
         [HttpPost]
@@ -81,7 +83,10 @@ namespace SaeedLearn.MVC.Controllers
                 if (result.Success)
                 {
                     _logger.LogInformation($"Login Account {login.UserName}");
-
+                    if (result.Message == "User Admin")
+                    {
+                        return Redirect("/Admin");
+                    }
                     return RedirectToAction("index");
                 }
                 else if (result.Message == "Invalid password")

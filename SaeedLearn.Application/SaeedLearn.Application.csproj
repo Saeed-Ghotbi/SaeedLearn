@@ -12,9 +12,10 @@
 
   <ItemGroup>
     <Folder Include="DTOs\Course\Validators\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Features\Course\Handlers\Command\" />
-    <Folder Include="Features\Course\Requests\Command\" />
+    <Folder Include="Features\Category\Handlers\Command\" />
+    <Folder Include="Features\Category\Requests\Command\" />
+    <Folder Include="Features\Teacher\Handlers\Command\" />
+    <Folder Include="Features\Teacher\Requests\Command\" />
   </ItemGroup>
 
   <ItemGroup>

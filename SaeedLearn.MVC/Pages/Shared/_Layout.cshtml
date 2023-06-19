@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head id="head">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title - Dancing Goat</title>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/responsive.css" rel="stylesheet" type="text/css" />
+    @await RenderSectionAsync("headers", required: false)
+</head>
+<body>
+
+    <div class="main-page-wrapper">
+
+        <!-- /.theme-main-menu -->
+        <div class="shrt-menu shrt-menu-four dark-bg text-light">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center main-header">
+                    <div class="logo"><a class="text-light font-weight-bold" asp-page="/admin/index">ADMIN</a></div>
+                    <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
+                        <div class="nav-container">
+                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent44" aria-controls="navbarSupportedContent44" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="flaticon-setup"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent44">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a asp-page="/Admin/Course/index" class="nav-link">لیست دوره ها</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-page="/Admin/Course/Create" class="nav-link">افزودن دوره</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> <!-- /.container -->
+                    </nav> <!-- /#mega-menu-holder -->
+                </div>
+            </div>
+        </div> <!-- /.shrt-menu -->
+        @RenderBody()
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top tran3s">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </button>
+        <!-- /.theme-footer-one -->
+        <footer class="theme-footer-one">
+            <div class="shape-one" data-aos="zoom-in-right"></div>
+            <img src="images/shape/shape-67.svg" alt="" class="shape-two">
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-12 about-widget" data-aos="fade-up">
+                            <a href="index.html" class="logo"><img src="images/logo/logo2.svg" alt=""></a>
+                            <a href="#" class="email">SaeedGhotbi@@outlook.com</a>
+                            <a href="#" class="phone">0938-0883666</a>
+
+                        </div> <!-- /.about-widget -->
+                        <div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
+                            <h5 class="title">دوره ها</h5>
+                            <ul>
+                                <li><a href="#">برنامه نویسی وب</a></li>
+                                <li><a href="#">برنامه نویسی موبایل</a></li>
+                                <li><a href="#">لرنامه نویسی ویندوز</a></li>
+                                <li><a href="#">بانک های اطلاعاتی</a></li>
+                                <li><a href="#">سئو</a></li>
+                            </ul>
+                        </div> <!-- /.footer-recent-post -->
+                        <div class="col-lg-3 col-lg-2 col-sm-6 col-12 footer-information" data-aos="fade-up">
+                            <h5 class="title">راه های ارتباطی</h5>
+                            <ul>
+                                <li><a href="https://www.instagram.com/saeedghotbipage"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="https://t.me/SaeedGhotbi7"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/saeed-ghotbi/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /.row -->
+                </div> <!-- /.container -->
+            </div> <!-- /.top-footer -->
+
+            <div class="container">
+                <div class="bottom-footer">
+                    <div class="clearfix">
+                        <p>&copy; کلیه حقوق این سایت متعلق به سعید قطبی میباشد.</p>
+                    </div>
+                </div> <!-- /.bottom-footer -->
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="~/lib/jquery.2.2.3.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+</html>

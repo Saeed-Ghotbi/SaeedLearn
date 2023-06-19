@@ -28,29 +28,27 @@ namespace SaeedLearn.Identity.Services
         public async Task<BaseCommandResponse> Login(AuthLogin login)
         {
             BaseCommandResponse response = new BaseCommandResponse();
-            var user = await _userManager.FindByNameAsync(login.UserName);
-            if (user == null)
+
+            var user = await UserCheck(login.UserName);
+            if (!user.Success)
             {
-                response.Success = false;
-                response.Message = "User Not Found";
                 return response;
             }
+
             var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, login.RememberMe, false);
             if (result.Succeeded)
             {
                 _logger.LogInformation("User logged in.", login.UserName);
                 var claims = new List<Claim>
                 {
-                  new Claim(ClaimTypes.NameIdentifier,user.Id),
-                  new Claim(ClaimTypes.Name,user.Firstname),
-                  new Claim(ClaimTypes.Email,user.Email),
+                    new Claim(ClaimTypes.Name,login.UserName),
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await _contextAccessor.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = login.RememberMe });
 
                 response.Success = true;
-                response.Message = "User logged in." + login.UserName;
+                response.Message = (login.UserName == "admin" ? "User Admin" : "User logged in." + login.UserName);
                 return response;
             }
             response.Success = false;
@@ -96,6 +94,31 @@ namespace SaeedLearn.Identity.Services
                 response.Errors = result.Errors.Select(e => e.Description).ToList();
                 return response;
             }
+        }
+
+        public async Task<BaseCommandResponse> UserCheck(string user)
+        {
+            BaseCommandResponse response = new BaseCommandResponse();
+            var result = await _userManager.FindByNameAsync(user);
+
+            if (user == null)
+            {
+                response.Success = false;
+                response.Message = "User Not Found";
+                return response;
+            }
+
+            response.Success = true;
+            response.Message = "User Exist";
+            return response;
+        }
+
+        public async Task<bool> IsAdmin(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            if (user != null && user.IsAdmin)
+                return true;
+            return false;
         }
     }
 }

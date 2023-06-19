@@ -5013,13 +5013,13 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   height: 36px;
 }
 .eCommerce-side-menu .main-menu-list>ul {margin-top: 70%;padding-bottom: 30px;}
-.eCommerce-side-menu .main-menu-list>ul>li>a {
-  font-size: 36px;
-  line-height: 60px;
-  color: #3e3e3e;
-  position: relative;
-  display: block;
-}
+    .eCommerce-side-menu .main-menu-list > ul > li > a {
+        font-size: 18px;
+        line-height: 40px;
+        color: #212121;
+        position: relative;
+        display: block;
+    }
 .eCommerce-side-menu .main-menu-list>ul>li {
   opacity: 0;
   transform: translateX(50%);

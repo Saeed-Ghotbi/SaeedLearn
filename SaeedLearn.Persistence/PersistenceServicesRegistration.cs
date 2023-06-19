@@ -16,7 +16,9 @@ namespace SaeedLearn.Persistence
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             services.AddScoped(typeof(ICourseRepository), typeof(CourseRepository));
-            //services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(ICourseCategoryRepository), typeof(CourseCategoryRepository));
+            services.AddScoped(typeof(ITeacherRepository), typeof(TeacherRepository));
+            services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
             return services;
         }
     }

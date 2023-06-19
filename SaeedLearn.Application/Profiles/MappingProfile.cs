@@ -10,12 +10,22 @@ namespace SaeedLearn.Application.Profiles
     {
         public MappingProfile()
         {
-            CreateMap<Course, CourseDto>();
+            #region Course
+            CreateMap<Course, CourseDto>().ReverseMap();
             CreateMap<Course, CardCourseDto>().ReverseMap();
+            CreateMap<CreateCourseDto, Course>();
+            CreateMap<Course, UpdateCourseDto>().ReverseMap();
+            #endregion
 
+            #region Category
             CreateMap<Category, CategoryDto>();
+            #endregion
 
+            #region Teacher
             CreateMap<Teacher, TeacherDto>();
+
+            #endregion
+
         }
     }
 }

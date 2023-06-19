@@ -12,7 +12,7 @@ using SaeedLearn.Persistence;
 namespace SaeedLearn.Persistence.Migrations
 {
     [DbContext(typeof(SaeedLearnDbContext))]
-    [Migration("20230601141945_init")]
+    [Migration("20230608140836_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -37,7 +37,6 @@ namespace SaeedLearn.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -48,25 +47,25 @@ namespace SaeedLearn.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9905),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4411),
                             Name = "طراحی وب"
                         },
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9908),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4413),
                             Name = "فرانت اند"
                         },
                         new
                         {
                             Id = 3,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9909),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4414),
                             Name = "بک اند"
                         },
                         new
                         {
                             Id = 4,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9910),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4416),
                             Name = "هوش مصنوعی"
                         });
                 });
@@ -82,9 +81,6 @@ namespace SaeedLearn.Persistence.Migrations
                     b.Property<bool>("ActiveCourse")
                         .HasColumnType("bit");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
@@ -94,11 +90,10 @@ namespace SaeedLearn.Persistence.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImgPath")
+                    b.Property<string>("PicturePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float?>("Offer")
@@ -112,6 +107,8 @@ namespace SaeedLearn.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TeacherId");
+
                     b.ToTable("Courses");
 
                     b.HasData(
@@ -119,10 +116,9 @@ namespace SaeedLearn.Persistence.Migrations
                         {
                             Id = 1,
                             ActiveCourse = true,
-                            CategoryId = 1,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9755),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4291),
                             Description = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
-                            ImgPath = "",
+                            PicturePath = "",
                             Name = "آموزش C#",
                             Offer = 0f,
                             Price = 2000000.0,
@@ -132,10 +128,9 @@ namespace SaeedLearn.Persistence.Migrations
                         {
                             Id = 2,
                             ActiveCourse = true,
-                            CategoryId = 2,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9769),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4307),
                             Description = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
-                            ImgPath = "",
+                            PicturePath = "",
                             Name = "آموزش جاوااسکریپت",
                             Offer = 0f,
                             Price = 3000000.0,
@@ -143,19 +138,45 @@ namespace SaeedLearn.Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SaeedLearn.Domain.Teacher", b =>
+            modelBuilder.Entity("SaeedLearn.Domain.CourseCategory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
+                    b.HasKey("CategoryId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CourseId = 2
+                        });
+                });
+
+            modelBuilder.Entity("SaeedLearn.Domain.Teacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -166,33 +187,60 @@ namespace SaeedLearn.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CourseId = 1,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9939),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4438),
                             Name = "سعید قطبی"
                         },
                         new
                         {
                             Id = 2,
-                            CourseId = 2,
-                            DateCreated = new DateTime(2023, 6, 1, 17, 49, 44, 916, DateTimeKind.Local).AddTicks(9941),
+                            DateCreated = new DateTime(2023, 6, 8, 17, 38, 35, 844, DateTimeKind.Local).AddTicks(4441),
                             Name = "محسن نیری"
                         });
                 });
 
-            modelBuilder.Entity("SaeedLearn.Domain.Teacher", b =>
+            modelBuilder.Entity("SaeedLearn.Domain.Course", b =>
                 {
-                    b.HasOne("SaeedLearn.Domain.Course", "Course")
-                        .WithOne("Teacher")
-                        .HasForeignKey("SaeedLearn.Domain.Teacher", "Id")
+                    b.HasOne("SaeedLearn.Domain.Teacher", "Teacher")
+                        .WithMany("Courses")
+                        .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SaeedLearn.Domain.CourseCategory", b =>
+                {
+                    b.HasOne("SaeedLearn.Domain.Category", "Category")
+                        .WithMany("CourseCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SaeedLearn.Domain.Course", "Course")
+                        .WithMany("CourseCategories")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
 
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("SaeedLearn.Domain.Category", b =>
+                {
+                    b.Navigation("CourseCategories");
+                });
+
             modelBuilder.Entity("SaeedLearn.Domain.Course", b =>
                 {
-                    b.Navigation("Teacher");
+                    b.Navigation("CourseCategories");
+                });
+
+            modelBuilder.Entity("SaeedLearn.Domain.Teacher", b =>
+                {
+                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }

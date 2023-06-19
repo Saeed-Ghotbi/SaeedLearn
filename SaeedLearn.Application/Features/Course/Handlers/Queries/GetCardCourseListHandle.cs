@@ -23,7 +23,7 @@ namespace SaeedLearn.Application.Features.Course.Handlers.Queries
         }
         public async Task<List<CardCourseDto>> Handle(GetCardCourseListRequest request, CancellationToken cancellationToken)
         {
-            var cardList = await _courseRepository.GetListCard();  
+            var cardList = await _courseRepository.GetCardList();  
             return _mapper.Map<List<CardCourseDto>>(cardList); 
         }
     }

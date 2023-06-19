@@ -8,5 +8,7 @@ namespace SaeedLearn.Application.Contracts.Identity
         Task<BaseCommandResponse> Login(AuthLogin login);
         Task<BaseCommandResponse> Logout();
         Task<BaseCommandResponse> Register(AuthRegister register);
+        Task<BaseCommandResponse> UserCheck(string username);
+        Task<bool> IsAdmin(string username);
     }
 }

@@ -9,7 +9,7 @@ using SaeedLearn.Domain;
 
 namespace SaeedLearn.Persistence.Repositories
 {
-    public class TeacherRepository : GenericRepository<Teacher>
+    public class TeacherRepository : GenericRepository<Teacher> , ITeacherRepository
     {
         private readonly SaeedLearnDbContext _dbContext;
         public TeacherRepository(SaeedLearnDbContext dbContext) : base(dbContext)

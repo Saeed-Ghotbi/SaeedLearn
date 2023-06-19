@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using SaeedLearn.Application.DTOs.Common;
+﻿using SaeedLearn.Application.DTOs.Common;
 
 namespace SaeedLearn.Application.DTOs.Course
 {
