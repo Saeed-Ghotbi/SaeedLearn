@@ -14,7 +14,11 @@ namespace SaeedLearn.Application.Profiles
             CreateMap<Course, CourseDto>().ReverseMap();
             CreateMap<Course, CardCourseDto>().ReverseMap();
             CreateMap<CreateCourseDto, Course>();
-            CreateMap<Course, UpdateCourseDto>().ReverseMap();
+            CreateMap<Course, UpdateCourseDto>()
+                .ForMember(src => src.CategoryIds, memberOptions =>
+                    memberOptions.MapFrom(desc => desc.CourseCategories.Select(cc =>
+                        cc.CategoryId).ToList()))
+                .ReverseMap();
             #endregion
 
             #region Category

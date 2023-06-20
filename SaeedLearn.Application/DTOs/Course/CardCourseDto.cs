@@ -6,5 +6,7 @@ namespace SaeedLearn.Application.DTOs.Course
     {
         public TimeOnly TimeCourse { get; set; }
 
+        public Domain.Teacher? Teacher { get; set; }
+
     }
 }

@@ -12,7 +12,6 @@ namespace SaeedLearn.Application.DTOs.Course
         public DateTime? DateModified { get; set; } = DateTime.Now;
         public string? Description { get; set; }
         public bool ActiveCourse { get; set; }
-        public int TeacherId { get; set; }
         public List<int> CategoryIds { get; set; }
 
     }

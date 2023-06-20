@@ -3,7 +3,7 @@
     <div class="img-holder"><a href="@Url.Action("CourseDetails","Courses",new {id = Model.Id})"><img src="/images/@Model.PicturePath" alt="@Model.Name"></a></div>
     <div class="info">
         <a href="shop-details.html" class="name">@Model.Name</a>
-        <div class="teacher"><i class="fa fa-user mr-2" aria-hidden="true"></i>@Model.TeacherName</div>
+        <div class="teacher"><i class="fa fa-user mr-2" aria-hidden="true"></i>@Model.Teacher.Name</div>
         <div class="price">@Model.Price</div>
         <a href="#" class="cart-button" title="Add to cart">
             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
