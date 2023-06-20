@@ -32,6 +32,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaeedLearn.Identity", "Saee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaeedLearn.Api", "SaeedLearn.Api\SaeedLearn.Api.csproj", "{39AA2A0C-5535-46BA-8E06-CB8B2BF0EA14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaeedLearn.UnitTests", "SaeedLearn.UnitTests\SaeedLearn.UnitTests.csproj", "{8D0D046B-25C8-4636-BF38-41119B2986FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{39AA2A0C-5535-46BA-8E06-CB8B2BF0EA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39AA2A0C-5535-46BA-8E06-CB8B2BF0EA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39AA2A0C-5535-46BA-8E06-CB8B2BF0EA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0D046B-25C8-4636-BF38-41119B2986FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0D046B-25C8-4636-BF38-41119B2986FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0D046B-25C8-4636-BF38-41119B2986FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0D046B-25C8-4636-BF38-41119B2986FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{24E336E0-735D-4FA7-9E7A-A9BA4B2AD864} = {E827CE42-9D38-430E-B009-02BDA945A036}
 		{24F6AA5B-F05C-44E1-87EF-5C52CDE22BA6} = {B1454FF9-671F-48F8-B3A2-5669121601CC}
 		{39AA2A0C-5535-46BA-8E06-CB8B2BF0EA14} = {52E8E5A7-45FB-4370-AB6C-AAB9C6A03792}
+		{8D0D046B-25C8-4636-BF38-41119B2986FF} = {10879D95-A268-4FC7-A402-690647118EE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87B66A0E-9E76-4B23-8BCF-99F6D2731B61}

@@ -14,5 +14,10 @@ namespace SaeedLearn.Domain
 
         public Teacher? Teacher { get; set; }
         public IList<CourseCategory>? CourseCategories { get; set; }
+
+        public static implicit operator List<object>(Course v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
