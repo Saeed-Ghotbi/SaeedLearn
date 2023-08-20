@@ -29,7 +29,7 @@ namespace SaeedLearn.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Course> GetCourse(int id)
+        async Task<Course> ICourseRepository.GetCourse(int id)
         {
             return await _dbContext.Courses
                 .Include(c => c.CourseCategories)
