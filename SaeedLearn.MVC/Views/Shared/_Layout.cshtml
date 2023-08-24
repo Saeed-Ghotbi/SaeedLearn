@@ -82,6 +82,7 @@
                                         <li><a href="@Url.Action("Index", "Account")"><img src="images/icon/icon39.svg" alt="" class="icon svg"> پروفایل @User.Identity.Name </a></li>
                                         <li><a href="#"><img src="images/icon/icon41.svg" alt="" class="icon svg"> سبد خرید</a></li>
                                         <li><a href="@Url.Action("Logout","Account")"><img src="images/icon/icon42.svg" alt="" class="icon svg"> خروج</a></li>
+                                        <li><a href="http://localhost:5262/Admin/course/index"><img src="images/icon/icon42.svg" alt="" class="icon svg"> ورود به ادمین</a></li>
                                     </ul>
                                 </div> <!-- /.dropdown-menu -->
                             </div>
@@ -91,10 +92,10 @@
                 else
                 {
                     <ul class="right-widget">
-                        <li>
+                        <li style="margin-left: 10px;">
                             <a href="@Url.Action("Login", "Account")">ورود</a>
                         </li>
-                        <li>
+                        <li style="margin-left: 10px;">
                             <a href="@Url.Action("Register", "Account")">ثبت نام</a>
                         </li>
                     </ul>

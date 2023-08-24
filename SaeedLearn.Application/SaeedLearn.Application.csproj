@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\Course\Validators\" />
     <Folder Include="Features\Category\Handlers\Command\" />
     <Folder Include="Features\Category\Requests\Command\" />
     <Folder Include="Features\Teacher\Handlers\Command\" />

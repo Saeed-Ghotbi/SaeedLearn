@@ -54,10 +54,11 @@ namespace SaeedLearn.MVC.Pages.Admin.Course
                 {
                     if (!updateCourseDto.PicturePath.IsNullOrEmpty())
                     {
-                        System.IO.File.Delete(updateCourseDto.PicturePath);
+                        var pathold = Directory.GetCurrentDirectory() + updateCourseDto.PicturePath;
+                        System.IO.File.Delete(pathold);
                     }
                     var guid = Guid.NewGuid().ToString();
-                    updateCourseDto.PicturePath = "/images/Uploads/300x150/" + guid + Path.GetExtension(Course.Picture.FileName);
+                    updateCourseDto.PicturePath = "wwwroot/images/Uploads/300x150/" + guid + Path.GetExtension(Course.Picture.FileName);
                     Course.Picture.UploadImage(guid);
                 }
 

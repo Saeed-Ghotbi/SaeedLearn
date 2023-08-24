@@ -10,12 +10,10 @@ namespace SaeedLearn.MVC.Controllers
     public class CoursesController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly ICourseService _courseService;
 
-        public CoursesController(IMediator mediator, ICourseService courseService)
+        public CoursesController(IMediator mediator)
         {
             _mediator = mediator;
-            _courseService = courseService;
         }
         public IActionResult Index()
         {
@@ -25,7 +23,6 @@ namespace SaeedLearn.MVC.Controllers
 
         public async Task<IActionResult> CourseDetails(int id)
         {
-            var t = await _courseService.GetAll();
             var course = await _mediator.Send(new GetCourseDetailRequest() { Id = id });
             return View(course);
         }
