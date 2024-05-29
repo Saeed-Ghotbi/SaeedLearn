@@ -1,11 +1,11 @@
 # SaeedLearn
 # **Project Description**
 
-This project aims to improve programming skills and gain practical experience using modern technologies such as Asp.Net Core 6, Clear Architecture, SOLID, Identity, CQRS Architecture, EF Core, and Unit Test.
+This project aims to improve programming skills and gain practical experience using modern technologies such as Asp.Net Core 6, Clean Architecture, SOLID, Identity, CQRS Architecture, EF Core, and Unit Test.
 
 ## **Technologies Used**
 - **Asp.Net Core 6**: A popular and powerful web programming framework used for launching dynamic and scalable web applications with less code.
-- **Clear Architecture**: An architecture used to improve the separation of concerns between project layers, enabling the writing of program code in independent and reusable modules.
+- **Clean Architecture**: An architecture used to improve the separation of concerns between project layers, enabling the writing of program code in independent and reusable modules.
 - **SOLID Principles**: These principles (Single Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle) are followed to help write code with high flexibility and transparency.
 - **Identity**: Used for managing and authenticating user identities, enabling the management of users and their roles.
 - **CQRS Architecture**: Used to separate commands and queries, allowing for the implementation of these elements separately to perform an operation.
